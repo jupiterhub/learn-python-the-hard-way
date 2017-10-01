@@ -2,4 +2,4 @@
 TBD
 
 # learn-python-the-hard-way
-exercises from http://learnpythonthehardway.org using Python 2
+* Exercises from http://learnpythonthehardway.org using Python 3
