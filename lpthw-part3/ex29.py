@@ -5,6 +5,8 @@ dogs = 15
 
 if people < cats:
     print("Too many cats! The world is doomed!")
+    # you can write multiple lines
+    print("or is it?")
 
 if people > cats:
     print("Not many cats! The world is saved")
