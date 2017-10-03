@@ -1,6 +1,7 @@
 # Classes baby
 # notice the argumet object
 # also works if that parameter is not there
+# however the argument name must exactly be 'object'
 class Song(object):
 
     # constructor
