@@ -1,5 +1,6 @@
 # Classes baby
 # notice the argumet object
+# also works if that parameter is not there
 class Song(object):
 
     # constructor
