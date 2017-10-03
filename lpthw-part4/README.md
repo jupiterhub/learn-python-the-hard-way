@@ -1,2 +1,2 @@
 # lpthw-part4
-Loops, lists and dictionaries
+Data structures, discussing lists, dictionaries and classes and more loops
