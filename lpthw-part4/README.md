@@ -1,2 +1,2 @@
 # lpthw-part4
-Loops and lists
+Loops, lists and dictionaries
