@@ -1,7 +1,8 @@
 # Classes baby
 # notice the argumet object
 # also works if that parameter is not there
-# however the argument name must exactly be 'object'
+# the argument is for inheritance, object is default, or none specified
+# you can do Song(Art) note: must be capital
 class Song(object):
 
     # constructor
