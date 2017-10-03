@@ -1,2 +1,2 @@
 # lpthw-part4
-Data structures, discussing lists, dictionaries and classes, OOP and more loops
+Data structures, discussing lists, dictionaries and classes, inheritance, and OOP concepts and more loops
