@@ -54,7 +54,7 @@ def convert(snippet, phrase):
 
     # note that we're looping in 2 params, it will only loops twice (1 per list)
     for sentence in snippet, phrase:
-        result = sentence[:] # ???
+        result = sentence[:] # copy list
 
         # fake class names
         for word in class_names:
