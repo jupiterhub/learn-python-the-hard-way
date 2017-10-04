@@ -18,14 +18,25 @@ class Engine(object):
     def play(self):
         current_scene = self.scene_map.opening_scene()
         last_scene = self.scene_map.next_scene('finished')
+        lives = 2
 
         while current_scene != last_scene:
             # returns the next scene
             next_scene_name = current_scene.enter()
+
+            # retry lives
+            while next_scene_name == "death" and lives != 0:
+                # Retry the scene
+                print(dedent(f"""
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    The stars took you back in time
+                    You only have {lives} lives left
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                """))
+                lives -= 1
+                next_scene_name = current_scene.enter()
+
             current_scene = self.scene_map.next_scene(next_scene_name)
-            
-            # uncoment to give another life
-            current_scene.enter()
 
 
 class Death(Scene):
