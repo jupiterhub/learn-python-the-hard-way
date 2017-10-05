@@ -18,3 +18,13 @@ def test_room():
     # function comes from nosetools
     assert_equal(gold.name, "GoldRoom")
     assert_equal(gold.paths, {})
+
+def test_room_paths():
+    center = Room("Center", "Test room in the center.")
+    north = Room("North", "Test room in the center.")
+    south = Room("South", "Test room in the center.")
+
+    center.add_paths({'north': north, 'south': south})
+
+    assert_equal(center.go('north'), north)
+    assert_equal(center.go('south'), south)
