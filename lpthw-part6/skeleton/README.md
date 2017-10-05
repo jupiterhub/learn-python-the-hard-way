@@ -1,4 +1,4 @@
-# lpthw-part6 > skeleton
+# lpthw-part6 > skeleton (ex46)
 a sample skeleton project Meant to be copied whenever you create a new project
 
 ## After copying steps:
