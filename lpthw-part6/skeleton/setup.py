@@ -3,6 +3,7 @@
 try:
     # setuptools, download/build/install packages
     # https://pypi.python.org/pypi/setuptools
+    # https://docs.python.org/3/distutils/apiref.html#distutils.core.setup
     from setuptools import setup
 except ImportError:
     # building and importing additional module to python
@@ -18,7 +19,10 @@ config = {
     'author_email': 'jupiter.adverts@gmail.com',
     'version': '0.1',
     'install_requires': ['nose'],
-    'packages': ['NAME'],
+    'packages': ['NAME'], # will look for NAME/__init__.py
+    #  for small distro, this can be alternative to listing a package
+    # it is expected to be under the root folder
+    # 'py_modules': ['mod1', 'pkg.mod2']
     'scripts': [],
     'name': 'projectname'
 }
