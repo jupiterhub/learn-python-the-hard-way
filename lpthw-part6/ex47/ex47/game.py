@@ -10,6 +10,8 @@ class Room(object):
 
     def go(self, direction):
         # dict.get(value, fallback)
+        # returns self so we can chain
+        # go('west').go('east')
         return self.paths.get(direction, None)
 
     def add_paths(self, paths):
