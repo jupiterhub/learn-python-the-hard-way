@@ -1,4 +1,4 @@
-# Own game
+# Own game, make a module for it.
 # Make a different game# Use more than one file and use import
 # Use Ibe ckass oer riin
 # Runner shuold know about them
