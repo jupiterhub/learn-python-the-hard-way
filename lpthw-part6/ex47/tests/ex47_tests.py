@@ -1,5 +1,5 @@
 from nose.tools import *
-import NAME # importing Folder
+import ex47 # importing Folder
 
 def setup():
     print("SETUP!")
