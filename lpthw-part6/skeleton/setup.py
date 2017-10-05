@@ -21,5 +21,8 @@ config = {
     'name': 'projectname'
 }
 
-# what is a double **?
+# ** pass the key=value as an argument
+# ie. setup(description="", author="") and so on
+# ** is also called kwargs
+# read more on https://www.saltycrane.com/blog/2008/01/how-to-use-args-and-kwargs-in-python/
 setup(**config)

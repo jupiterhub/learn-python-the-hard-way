@@ -1,2 +1,2 @@
 # lpthw-part6
-Making own game, Project Skeleton, Automated testing, Advanced User Input, Making Sentences
+Making own game, PIP, Project Skeleton, Automated testing, Advanced User Input, Making Sentences
