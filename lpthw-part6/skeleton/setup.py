@@ -1,3 +1,5 @@
+# setup script is the center of all activity
+# in building, distributing and installing modules
 try:
     # setuptools, download/build/install packages
     # https://pypi.python.org/pypi/setuptools
