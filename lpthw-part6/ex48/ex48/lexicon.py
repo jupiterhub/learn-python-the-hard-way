@@ -12,6 +12,7 @@ def scan(sentence):
         'eat': 'verb',
         'the': 'stop',
         'in': 'stop',
+        'is': 'stop',
         'of': 'stop',
         'north': 'direction',
         'south': 'direction',
@@ -20,7 +21,8 @@ def scan(sentence):
 
     tokenized_words = []
     for word in words:
-        token_type = word_type_dict.get(word)
+        # get the key via lowercase 
+        token_type = word_type_dict.get(word.lower())
 
         if word.isnumeric():
             # number

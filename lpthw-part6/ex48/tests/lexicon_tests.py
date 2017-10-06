@@ -53,3 +53,11 @@ def test_errors():
     assert_equal(result, [('noun', 'bear'),
                           ('error', 'IAS'),
                           ('noun', 'princess')])
+
+def test_casing():
+    result = lexicon.scan("ThE 5 Bear IS NORth")
+    assert_equal(result, [('stop', 'ThE'),
+                         ('number', 5),
+                         ('noun', 'Bear'),
+                         ('stop', 'IS'),
+                         ('direction', 'NORth')])
