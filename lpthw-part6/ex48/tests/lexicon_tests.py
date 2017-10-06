@@ -28,3 +28,10 @@ def test_stops():
     assert_equal(result, [('stop', 'the'),
                           ('stop', 'in'),
                           ('stop', 'of')])
+def test_numbers():
+    assert_equal(lexicon.scan("1234"), [('number', 1234)])
+
+    # test multiple
+    result = lexicon_scan("3 91234")
+    assert_equal(result, [('number', 3),
+                          ('number', 91234)])
