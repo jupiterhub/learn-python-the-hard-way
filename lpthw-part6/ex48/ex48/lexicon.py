@@ -1,5 +1,6 @@
 
-# type  verb, direction
-# word north, south, east, west
-def scan(type, word):
+# returns [(type, word)]
+# type: verb, direction stop
+# word: go, north south, the
+def scan(word):
     pass
