@@ -13,7 +13,15 @@ app = Flask(__name__)
 # index mappings
 @app.route('/')
 def index():
-    greeting = "Hello World"
+    # get request parameter
+    name = request.args.get('name', 'Nobody')
+
+    if name:
+        greeting= f"Hello {name}"
+    else:
+        # won't be reached there's always a fallback
+        greeting = "Hello World"
+
     # looks at templates/ (variables for 2nd argument)
     return render_template("index.html", greeting=greeting)
 
