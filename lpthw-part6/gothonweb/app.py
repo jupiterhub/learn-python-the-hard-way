@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # index mappings
 @app.route('/')
-def hello_world():
+def index():
     greeting = "Hello World"
     # looks at templates/ (variables for 2nd argument)
     return render_template("index.html", greeting=greeting)
