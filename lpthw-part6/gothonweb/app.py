@@ -24,12 +24,13 @@ def greet(message):
         return render_template("index.html", greeting=message)
     else:
         pass
-    
+
 # with is try-finally block. we call it on Flasks built in method
 with app.test_request_context():
     # use url_for when generating urls
     print(url_for('index'))
     print(url_for('greet', message="hello"))
+    print("Request method is:", request.method)
 
 # only run the server if
 # running directly (not an import)
