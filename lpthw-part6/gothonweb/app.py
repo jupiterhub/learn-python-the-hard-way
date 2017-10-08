@@ -3,10 +3,11 @@
 from flask import Flask # web framework/server
 from flask import render_template # loads templates using jinja2
 from flask import url_for # Identify URL
+from flask import request # for HTTP Methods
+
 # interpreter sets default values for __name__
-# think of Thread name.
-# this is "__main__"
-# if you run the module it will be the module name
+# think of Thread name.  this is "__main__"
+# run inside an imported module and it will be the module name
 app = Flask(__name__)
 
 # index mappings
@@ -17,10 +18,13 @@ def index():
     return render_template("index.html", greeting=greeting)
 
 # dynamic parameter
-@app.route('/greet/<message>')
+@app.route('/greet/<message>', methods=['GET', 'POST'])
 def greet(message):
-    return render_template("index.html", greeting=message)
-
+    if (request.method == 'GET'):
+        return render_template("index.html", greeting=message)
+    else:
+        pass
+    
 # with is try-finally block. we call it on Flasks built in method
 with app.test_request_context():
     # use url_for when generating urls
