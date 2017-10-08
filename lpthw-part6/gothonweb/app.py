@@ -15,6 +15,11 @@ def index():
     # looks at templates/ (variables for 2nd argument)
     return render_template("index.html", greeting=greeting)
 
+# dynamic parameter
+@app.route('/greet/<message>')
+def greet(message):
+    return render_template("index.html", greeting=message)
+
 # only run the server if
 # running directly (not an import)
 if __name__ == "__main__":
