@@ -1,7 +1,7 @@
 # ex50.py, simple web server
 # server supports hot reload
 from flask import Flask # web framework/server
-from flask import render_template # loads templates
+from flask import render_template # loads templates using jinja2
 # interpreter sets default values for __name__
 # think of Thread name.
 # this is "__main__"
