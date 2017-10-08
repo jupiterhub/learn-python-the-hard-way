@@ -25,6 +25,20 @@ def index():
     # looks at templates/ (variables for 2nd argument)
     return render_template("index.html", greeting=greeting)
 
+# ex51
+@app.route("/hello", methods=['POST', 'GET'])
+def hello():
+    greeting = "Hello World"
+
+    if request.method == "POST":
+        name = request.form['name']
+        greet = request.form['greet']
+        greeting = f"{greet}, {name}"
+        return render_template("index.html", greeting=greeting)
+    else:
+        return render_template("hello_form.html")
+
+
 # dynamic parameter
 @app.route('/greet/<message>', methods=['GET', 'POST'])
 def greet(message):
