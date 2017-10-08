@@ -34,9 +34,9 @@ def hello():
         name = request.form['name']
         greet = request.form['greet']
         greeting = f"{greet}, {name}"
-        return render_template("index.html", greeting=greeting)
+        return render_template("index_laid_out.html", greeting=greeting)
     else:
-        return render_template("hello_form.html")
+        return render_template("hello_form_laid_out.html")
 
 
 # dynamic parameter
