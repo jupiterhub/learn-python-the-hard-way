@@ -4,11 +4,23 @@ from flask import Flask # web framework/server
 from flask import render_template # loads templates using jinja2
 from flask import url_for # Identify URL
 from flask import request # for HTTP Methods
+from flask import redirect # for redirecting requets
 
+# For file upload
+import os
+from werkzeug.utils import secure_filename
+
+UPLOAD_FOLDER = "C:\\2-dev\\PythonProjects\\learn-python-the-hard-way\\lpthw-part6\\gothonweb\\files"
+ALLOWED_EXTENSIONS = ['png','jpg', 'jpeg', 'gif']
 # interpreter sets default values for __name__
 # think of Thread name.  this is "__main__"
 # run inside an imported module and it will be the module name
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+def allowed_file(filename):
+      return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # index mappings
 @app.route('/')
@@ -34,6 +46,19 @@ def hello():
         name = request.form['name']
         greet = request.form['greet']
         greeting = f"{greet}, {name}"
+
+        # ~~~~~~~~~~~~~~~~~~~~~ file
+        if 'file' in request.files:
+            uploaded_file = request.files['file']
+
+            if uploaded_file.filename == '':
+                print('No selected file')
+                return redirect(request.url)
+            if uploaded_file and allowed_file(uploaded_file.filename):
+                # encrypt, so hacker cant use ../../../touch hacked.txt
+                filename = secure_filename(uploaded_file.filename)
+                uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
         return render_template("index_laid_out.html", greeting=greeting)
     else:
         return render_template("hello_form_laid_out.html")

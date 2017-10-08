@@ -5,7 +5,7 @@ app.config['TESTING'] = True
 # basic test client from Flask
 web = app.test_client()
 
-def test_index():
+def test_all():
     # follow_redirect (changes url if the page redirects)
     rv = web.get('/', follow_redirects=True)
     assert_equal(rv.status_code, 200)
@@ -16,7 +16,7 @@ def test_index():
     # assert_in  forces this
     assert_in(b"Fill Out This Form", rv.data) # b"" byte string
 
-    data = {'name':'Jupiter',  'greet': 'Hola'}
+    data = {'name':'Jupiter',  'greet': 'Hola', 'file': 'cat.jpg'}
     rv = web.post('/hello', follow_redirects=True, data=data)
 
     assert_in(b"Jupiter", rv.data)
