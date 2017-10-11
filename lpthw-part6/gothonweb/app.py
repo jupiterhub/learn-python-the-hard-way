@@ -38,13 +38,11 @@ def index():
     return render_template("index.html", greeting=greeting)
 
 # ex51
-@app.route("/hello", methods=['POST', 'GET', 'UPDATE'])
+@app.route("/hello", methods=['POST', 'GET'])
 def hello():
     greeting = "Hello World"
 
-    if request.method == "UPDATE":
-        return render_template("hello_form_laid_out.html")
-    elif request.method == "POST":
+    if request.method == "POST":
         name = request.form['name']
         greet = request.form['greet']
         greeting = f"{greet}, {name}"
