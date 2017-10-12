@@ -98,3 +98,11 @@ class Room(object):
         explode like a bright star, taking out the Gothon ship at the same time.
         You won!
         """)
+
+        the_end_loser = Room("The End",
+        # todo: put pod number
+        """
+        You jump into a random pod and hit the eject button.
+        The pod escapes out into the void of space, then
+        implodes as the hull ruptures, crushing your body in to jam jelly.
+        """)
