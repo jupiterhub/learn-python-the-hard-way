@@ -106,3 +106,5 @@ class Room(object):
         The pod escapes out into the void of space, then
         implodes as the hull ruptures, crushing your body in to jam jelly.
         """)
+
+        generic_death = Room("death", "You died.")
