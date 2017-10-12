@@ -66,5 +66,25 @@ class Room(object):
         under your arm and surprise 5 Gothons who are trying to take control of the ship.
         Each of them has an even uglier clown costume than the last.
         They haven't pulled their weapons out yet, as they see the active bomb under your arm
-        and don't want to set it off.        
+        and don't want to set it off.
+        """)
+
+        escape_pod = Room("Escape Pod",
+        """
+        You point your blaster at the bomb under your arm
+        and the Gothons put their hands up and start to sweat.
+        You inch backward to the door, open it, and then
+        carefully place the bomb on the floor, pointing your blaster at it.
+        You then jump back through the door, punch the close button and blast the lock
+        so the Gothons can't get out. Now that the bomb is placed
+        you run to the escape pod to get off this tin can.
+
+        You rush through the ship desparately
+        trying to make it to the escape pod beore the whole ship explodes.
+        It seems like hardly any Gothons are on the ship,
+        so your run is clear of interference.
+        You get to the chamber with the escape pods,
+        and now need to pick one to take. Some of them could be damaged
+        but you don't have time to look.
+        There's 5 pods, which on do you take?
         """)
