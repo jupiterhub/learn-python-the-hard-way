@@ -140,3 +140,11 @@ class Room(object):
             # globals are variables like __name__ with value __main__
             # updated to get name from instance instead
             return globals().get(name)
+
+        def name_room(room):
+            """
+            Same possible security problem, can you trust the parameter?
+            """
+            for key,value in globals().items():
+                if value == room:
+                    return key
