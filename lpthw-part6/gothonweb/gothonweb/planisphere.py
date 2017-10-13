@@ -108,3 +108,25 @@ class Room(object):
         """)
 
         generic_death = Room("death", "You died.")
+
+        escape_pod.add_paths({
+            '2': the_end_winner,
+            '*': the_end_loser  # '*' is a regex for anything else
+        })
+
+        the_bridge.add_paths({
+            'throw the bomb': generic_death,
+            'slowly place the bomb': escape_pod
+        })
+
+        laser_weapon_armory.add_paths({
+            # todo, make this an input
+            '0132': the_bridge,
+            '*': generic_death # '*' is a regex for anything else
+        })
+
+        central_corridor.add_paths({
+            'shoot!': generic_death,
+            'dodge!': generic_death,
+            'tell a joke': laser_weapon_armory
+        })
