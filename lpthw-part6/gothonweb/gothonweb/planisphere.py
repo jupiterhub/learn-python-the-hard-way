@@ -130,3 +130,13 @@ class Room(object):
             'dodge!': generic_death,
             'tell a joke': laser_weapon_armory
         })
+
+        START = 'central_corridor'
+
+        def load_room(name):
+            """
+            There is a potential security problem here
+            """
+            # globals are variables like __name__ with value __main__
+            # updated to get name from instance instead
+            return globals().get(name)
