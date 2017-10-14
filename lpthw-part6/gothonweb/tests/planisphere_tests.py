@@ -49,3 +49,4 @@ def test_gothon_game_map():
 
     room = start_room.go('tell a joke')
     assert_equal(room, laser_weapon_armory)
+    assert_equal('laser_weapon_armory', name_room(laser_weapon_armory))

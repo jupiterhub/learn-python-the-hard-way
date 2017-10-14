@@ -133,19 +133,26 @@ central_corridor.add_paths({
 
 START = 'central_corridor'
 
+rooms = {
+    'central_corridor': central_corridor,
+    'laser_weapon_armory': laser_weapon_armory,
+    'the_bridge': the_bridge,
+    'escape_pod': escape_pod,
+    'the_end_loser': the_end_loser,
+    'the_end_winner': the_end_winner,
+    'generic_death': generic_death
+}
 
 def load_room(name):
     """
-    There is a potential security problem here
+    load room by string name
     """
-    # globals are variables like __name__ with value __main__
-    # updated to get name from instance instead
-    return globals().get(name)
+    return rooms.get(name)
 
 def name_room(room):
     """
-    Same possible security problem, can you trust the parameter?
+    get room name based on object
     """
-    for key,value in globals().items():
+    for key,value in rooms.items():
         if value == room:
             return key
