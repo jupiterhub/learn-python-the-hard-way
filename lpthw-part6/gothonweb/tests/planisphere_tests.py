@@ -50,6 +50,9 @@ def test_gothon_game_map():
 
 def test_central_corridor_deaths():
     start_room = load_room(START) # central_corridor
-    scene = start_room.go('shoot!')
 
-    assert_equal('death_via_gothon', scene.name)
+    scene = start_room.go('shoot!')
+    assert_equal('death_via_shoot', scene.name)
+
+    scene = start_room.go('dodge!')
+    assert_equal('death_via_dodge', scene.name)

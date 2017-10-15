@@ -109,7 +109,7 @@ implodes as the hull ruptures, crushing your body in to jam jelly.
 
 generic_death = Room("death", "You died.")
 
-death_via_gothon = Room("death_via_gothon",
+death_via_shoot = Room("death_via_shoot",
                     """
                     Quick on the draw you yank out your blaster
                     and fire it at the Gothon. His clow costume is flowing
@@ -120,6 +120,17 @@ death_via_gothon = Room("death_via_gothon",
                     and blast you repeatedly in the face until you are dead.
                     The he eats you.
                     """)
+
+death_via_dodge = Room("death_via_dodge",
+                    """
+                    Like a world class boxer you dodge, weave, slip
+                    and slide right as the Gothon's blaster cranks a laser past your head.
+                    In the middle of your artful dodge
+                    your foot slips and you bang your head on the metal wall and pass out.
+                    You wake up shortly after only to die as Gothon stomps on your head
+                    and eats you.
+                    """)
+
 
 escape_pod.add_paths({
     '2': the_end_winner,
@@ -138,8 +149,8 @@ laser_weapon_armory.add_paths({
 })
 
 central_corridor.add_paths({
-    'shoot!': death_via_gothon,
-    'dodge!': generic_death,
+    'shoot!': death_via_shoot,
+    'dodge!': death_via_dodge,
     'tell a joke': laser_weapon_armory
 })
 
