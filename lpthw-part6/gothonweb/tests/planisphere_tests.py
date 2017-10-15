@@ -44,9 +44,12 @@ def test_map():
 
 def test_gothon_game_map():
     start_room = load_room(START)
-    assert_equal(start_room.go('shoot!'), generic_death)
-    assert_equal(start_room.go('dodge!'), generic_death)
-
     room = start_room.go('tell a joke')
     assert_equal(room, laser_weapon_armory)
     assert_equal('laser_weapon_armory', name_room(laser_weapon_armory))
+
+def test_central_corridor_deaths():
+    start_room = load_room(START) # central_corridor
+    scene = start_room.go('shoot!')
+
+    assert_equal('death_via_gothon', scene.name)

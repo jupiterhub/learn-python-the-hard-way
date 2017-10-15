@@ -109,6 +109,18 @@ implodes as the hull ruptures, crushing your body in to jam jelly.
 
 generic_death = Room("death", "You died.")
 
+death_via_gothon = Room("death_via_gothon",
+                    """
+                    Quick on the draw you yank out your blaster
+                    and fire it at the Gothon. His clow costume is flowing
+                    and moving around his body, which throws off your aim.
+                    Your laser hits his costume but misses him entirely.
+                    This completely ruins his brand new costume his mother bought him,
+                    which makes him fly into an insane rage
+                    and blast you repeatedly in the face until you are dead.
+                    The he eats you.
+                    """)
+
 escape_pod.add_paths({
     '2': the_end_winner,
     '*': the_end_loser  # '*' is a regex for anything else
@@ -126,7 +138,7 @@ laser_weapon_armory.add_paths({
 })
 
 central_corridor.add_paths({
-    'shoot!': generic_death,
+    'shoot!': death_via_gothon,
     'dodge!': generic_death,
     'tell a joke': laser_weapon_armory
 })
