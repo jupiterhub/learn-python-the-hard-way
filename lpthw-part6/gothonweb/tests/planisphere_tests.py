@@ -42,7 +42,7 @@ def test_map():
     assert_equal(start.go('west').go('east'), start)
     assert_equal(start.go('down').go('up'), start)
 
-def test_gothon_game_map():
+def test_central_corridor_success_to_armory():
     start_room = load_room(START)
     room = start_room.go('tell a joke')
     assert_equal(room, laser_weapon_armory)
@@ -56,3 +56,10 @@ def test_central_corridor_deaths():
 
     scene = start_room.go('dodge!')
     assert_equal('death_via_dodge', scene.name)
+
+def test_weapon_armory_success_to_bridge():
+    room = load_room('laser_weapon_armory')
+    assert_equal(room, laser_weapon_armory)
+
+    next_room = room.go('0132')
+    assert_equal(the_bridge, next_room)
