@@ -63,3 +63,12 @@ def test_weapon_armory_success_to_bridge():
 
     next_room = room.go('0132')
     assert_equal(the_bridge, next_room)
+
+def test_weapon_armory_death():
+    room = load_room('laser_weapon_armory')
+    assert_equal(room, laser_weapon_armory)
+
+    # TODO: update when door retry is implemented.
+    #  only die on the 10x fail
+    scene = room.go('*')
+    assert_equal(death_via_failed_unlock, scene)

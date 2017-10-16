@@ -131,11 +131,13 @@ death_via_dodge = Room("death_via_dodge",
                     and eats you.
                     """)
 
-
-escape_pod.add_paths({
-    '2': the_end_winner,
-    '*': the_end_loser  # '*' is a regex for anything else
-})
+death_via_failed_unlock = Room("death_via_failed_unlock",
+                    """
+                    The lock buzzes on last time and then
+                    you hear a sickening melting sound as the mechanism is fused together.
+                    You decide to sit there, and finally the Gothons blow up the ship
+                    from their ship and you die
+                    """)
 
 the_bridge.add_paths({
     'throw the bomb': generic_death,
@@ -145,7 +147,7 @@ the_bridge.add_paths({
 laser_weapon_armory.add_paths({
     # todo, make this an input
     '0132': the_bridge,
-    '*': generic_death # '*' is a regex for anything else
+    '*': death_via_failed_unlock # '*' is a regex for anything else
 })
 
 central_corridor.add_paths({
