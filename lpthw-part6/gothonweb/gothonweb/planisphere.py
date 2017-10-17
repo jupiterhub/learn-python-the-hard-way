@@ -107,8 +107,6 @@ The pod escapes out into the void of space, then
 implodes as the hull ruptures, crushing your body in to jam jelly.
 """)
 
-generic_death = Room("death", "You died.")
-
 death_via_shoot = Room("death_via_shoot",
                     """
                     Quick on the draw you yank out your blaster
@@ -147,6 +145,11 @@ death_via_throw_bomb = Room("death_via_throw_bomb",
                     As you die you see another Gothon frantically try to disarm the bomb.
                     You die knowing they will probably blow up when it goes off.
                     """)
+escape_pod.add_paths({
+    '2': the_end_winner,
+    '*': the_end_loser
+})
+
 
 the_bridge.add_paths({
     'throw the bomb': death_via_throw_bomb,
@@ -174,8 +177,8 @@ rooms = {
     'escape_pod': escape_pod,
     'the_end_loser': the_end_loser,
     'the_end_winner': the_end_winner,
-    'generic_death': generic_death
-}
+    'death_via_throw_bomb': death_via_throw_bomb
+    }
 
 def load_room(name):
     """

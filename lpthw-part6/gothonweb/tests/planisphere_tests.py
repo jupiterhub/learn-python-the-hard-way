@@ -79,10 +79,25 @@ def test_bridge_success_to_escape_pod():
 
     next_room = room.go('slowly place the bomb')
     assert_equal(escape_pod, next_room)
+    assert_equal('escape_pod', name_room(next_room))
 
 def test_bridge_deaths():
     room = load_room('the_bridge')
-    assert_equal(room, the_bridge)
+    assert_equal(the_bridge, room)
 
     scene = room.go('throw the bomb')
     assert_equal(death_via_throw_bomb, scene)
+
+def test_escape_pod_success_to_win():
+    room = load_room('escape_pod')
+    assert_equal(escape_pod, room)
+
+    scene = escape_pod.go('2')
+    assert_equal(the_end_winner, scene)
+
+def test_escape_pod_deaths():
+    room = load_room('escape_pod')
+    assert_equal(escape_pod, room)
+
+    scene = escape_pod.go('*') # todo make it regex
+    assert_equal(the_end_loser, scene)
