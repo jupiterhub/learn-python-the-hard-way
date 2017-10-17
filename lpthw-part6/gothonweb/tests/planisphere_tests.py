@@ -101,3 +101,9 @@ def test_escape_pod_deaths():
 
     scene = escape_pod.go('*') # todo make it regex
     assert_equal(the_end_loser, scene)
+
+def test_rooms_are_registered():
+    assert_equal('central_corridor', name_room(central_corridor))
+    assert_equal('laser_weapon_armory', name_room(laser_weapon_armory))
+    assert_equal('the_bridge', name_room(the_bridge))
+    assert_equal('escape_pod', name_room(escape_pod))
