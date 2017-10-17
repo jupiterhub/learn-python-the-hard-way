@@ -1,1 +1,0 @@
-print("Globals:", globals())
