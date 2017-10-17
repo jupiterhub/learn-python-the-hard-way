@@ -174,10 +174,7 @@ rooms = {
     'central_corridor': central_corridor,
     'laser_weapon_armory': laser_weapon_armory,
     'the_bridge': the_bridge,
-    'escape_pod': escape_pod,
-    'the_end_loser': the_end_loser,
-    'the_end_winner': the_end_winner,
-    'death_via_throw_bomb': death_via_throw_bomb
+    'escape_pod': escape_pod
     }
 
 def load_room(name):
