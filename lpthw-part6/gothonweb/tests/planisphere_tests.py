@@ -64,7 +64,7 @@ def test_weapon_armory_success_to_bridge():
     next_room = room.go('0132')
     assert_equal(the_bridge, next_room)
 
-def test_weapon_armory_death():
+def test_weapon_armory_deaths():
     room = load_room('laser_weapon_armory')
     assert_equal(room, laser_weapon_armory)
 
@@ -72,3 +72,17 @@ def test_weapon_armory_death():
     #  only die on the 10x fail
     scene = room.go('*')
     assert_equal(death_via_failed_unlock, scene)
+
+def test_bridge_success_to_escape_pod():
+    room = load_room('the_bridge')
+    assert_equal(room, the_bridge)
+
+    next_room = room.go('slowly place the bomb')
+    assert_equal(escape_pod, next_room)
+
+def test_bridge_deaths():
+    room = load_room('the_bridge')
+    assert_equal(room, the_bridge)
+
+    scene = room.go('throw the bomb')
+    assert_equal(death_via_throw_bomb, scene)

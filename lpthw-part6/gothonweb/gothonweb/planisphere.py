@@ -139,8 +139,17 @@ death_via_failed_unlock = Room("death_via_failed_unlock",
                     from their ship and you die
                     """)
 
+death_via_throw_bomb = Room("death_via_throw_bomb",
+                    """
+                    In a panic you throw the bomb at the group of Gothons
+                    and make a leap for the door.
+                    Right as you drop it a Gothon shoots you right in the back killing you.
+                    As you die you see another Gothon frantically try to disarm the bomb.
+                    You die knowing they will probably blow up when it goes off.
+                    """)
+
 the_bridge.add_paths({
-    'throw the bomb': generic_death,
+    'throw the bomb': death_via_throw_bomb,
     'slowly place the bomb': escape_pod
 })
 
