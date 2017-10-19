@@ -10,3 +10,6 @@ def index():
 app.route('/game')
 def game_engine():
     pass
+
+if __name__ == "__main__":
+    app.run()
