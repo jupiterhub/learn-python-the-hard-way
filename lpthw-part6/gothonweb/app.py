@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 app.route('/')
 def index():
-    pass
+    greeting = "Start game"
+    return render_template("index.html", greeting=greeting)
 
 app.route('/game')
 def game_engine():
