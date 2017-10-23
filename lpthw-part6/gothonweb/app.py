@@ -6,8 +6,9 @@ app = Flask(__name__)
 
 app.route('/')
 def index():
-    greeting = "Start game"
-    return render_template("index.html", greeting=greeting)
+    # "setup" the session with starting values
+    session['room_name'] = planisphere.START
+    return redirect(url_for("game")) # redirect to /game
 
 app.route('/game')
 def game_engine():
