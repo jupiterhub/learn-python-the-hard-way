@@ -4,13 +4,13 @@ from gothonweb import planisphere
 
 app = Flask(__name__)
 
-app.route('/')
+@app.route('/')
 def index():
     # "setup" the session with starting values
     session['room_name'] = planisphere.START
     return redirect(url_for("game")) # redirect to /game
 
-app.route('/game', methods=['GET', 'POST'])
+@app.route('/game', methods=['GET', 'POST'])
 def game_engine():
     room_name = session.get('room_name')
 
@@ -18,9 +18,9 @@ def game_engine():
         if room_name:
             room = planisphere.load_room(room_name)
             return render_template("show_room.html", room=room)
-    else:
-        # hack if there is no session
-        return render_template("you_died.html")
+        else:
+            # hack if there is no session
+            return render_template("you_died.html")
     else:
         action = request.form.get('action')
 
