@@ -19,7 +19,26 @@ def game_engine():
             room = planisphere.load_room(room_name)
             return render_template("show_room.html", room=room)
     else:
-        pass
+        # hack if there is no session
+        return render_template("you_died.html")
+    else:
+        action = request.form.get('action')
+
+        if room_name and action:
+            room = planisphere.load_room(room_name)
+            next_room = room.go(action)
+
+            if not next_room:
+                # repeat same room
+                session['room_name'] = planisphere.name_room(room)
+            else:
+                # move to next room
+                session['room_name'] = planisphere.name_room(next_room)
+
+        return redirect(url_for("game"))
+
+# CHANGE THIS IF TOU PUT IN THE INTERNET
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?R'
 
 if __name__ == "__main__":
     app.run()
