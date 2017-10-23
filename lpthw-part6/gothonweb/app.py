@@ -8,10 +8,10 @@ app = Flask(__name__)
 def index():
     # "setup" the session with starting values
     session['room_name'] = planisphere.START
-    return redirect(url_for("game")) # redirect to /game
+    return redirect(url_for("game")) # redirect to whichever url was in game()
 
 @app.route('/game', methods=['GET', 'POST'])
-def game_engine():
+def game():
     room_name = session.get('room_name')
 
     if request.method == "GET":
