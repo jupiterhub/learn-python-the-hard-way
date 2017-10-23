@@ -52,10 +52,10 @@ def test_central_corridor_deaths():
     start_room = load_room(START) # central_corridor
 
     scene = start_room.go('shoot!')
-    assert_equal('death_via_shoot', scene.name)
+    assert_equal('death', scene.name)
 
     scene = start_room.go('dodge!')
-    assert_equal('death_via_dodge', scene.name)
+    assert_equal('death', scene.name)
 
 def test_weapon_armory_success_to_bridge():
     room = load_room('laser_weapon_armory')

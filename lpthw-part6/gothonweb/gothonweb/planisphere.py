@@ -107,7 +107,7 @@ The pod escapes out into the void of space, then
 implodes as the hull ruptures, crushing your body in to jam jelly.
 """)
 
-death_via_shoot = Room("death_via_shoot",
+death_via_shoot = Room("death",
                     """
                     Quick on the draw you yank out your blaster
                     and fire it at the Gothon. His clow costume is flowing
@@ -119,7 +119,7 @@ death_via_shoot = Room("death_via_shoot",
                     The he eats you.
                     """)
 
-death_via_dodge = Room("death_via_dodge",
+death_via_dodge = Room("death",
                     """
                     Like a world class boxer you dodge, weave, slip
                     and slide right as the Gothon's blaster cranks a laser past your head.
@@ -129,7 +129,7 @@ death_via_dodge = Room("death_via_dodge",
                     and eats you.
                     """)
 
-death_via_failed_unlock = Room("death_via_failed_unlock",
+death_via_failed_unlock = Room("death",
                     """
                     The lock buzzes on last time and then
                     you hear a sickening melting sound as the mechanism is fused together.
@@ -137,7 +137,7 @@ death_via_failed_unlock = Room("death_via_failed_unlock",
                     from their ship and you die
                     """)
 
-death_via_throw_bomb = Room("death_via_throw_bomb",
+death_via_throw_bomb = Room("death",
                     """
                     In a panic you throw the bomb at the group of Gothons
                     and make a leap for the door.
