@@ -15,9 +15,11 @@ def game_engine():
     room_name = session.get('room_name')
 
     if request.method == "GET":
-        pass
+        if room_name:
+            room = planisphere.load_room(room_name)
+            return render_template("show_room.html", room=room)
     else:
         pass
-    
+
 if __name__ == "__main__":
     app.run()
