@@ -10,9 +10,14 @@ def index():
     session['room_name'] = planisphere.START
     return redirect(url_for("game")) # redirect to /game
 
-app.route('/game')
+app.route('/game', methods=['GET', 'POST'])
 def game_engine():
-    return render_template("game.html")
+    room_name = session.get('room_name')
 
+    if request.method == "GET":
+        pass
+    else:
+        pass
+    
 if __name__ == "__main__":
     app.run()
