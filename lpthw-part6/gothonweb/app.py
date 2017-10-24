@@ -19,7 +19,7 @@ def game():
             room = planisphere.load_room(room_name)
             return render_template("show_room.html", room=room)
         else:
-            # hack if there is no session
+            # in case the user access /game directly
             return render_template("you_died.html")
     else:
         action = request.form.get('action')
@@ -27,6 +27,8 @@ def game():
         if room_name and action:
             room = planisphere.load_room(room_name)
             next_room = room.go(action)
+            print("ACTION:",action)
+            print("NEXT ROOM:", next_room)
 
             if not next_room:
                 # repeat same room
