@@ -27,9 +27,7 @@ def game():
         if room_name and action:
             room = planisphere.load_room(room_name)
             next_room = room.go(action)
-            print("ACTION:",action)
-            print("NEXT ROOM:", next_room)
-
+            
             if not next_room:
                 # repeat same room
                 session['room_name'] = planisphere.name_room(room)
