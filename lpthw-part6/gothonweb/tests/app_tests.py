@@ -21,7 +21,7 @@ def test_go_to_next_room():
     assert_equal(rv.status_code, 200)
     assert_in(b"Laser Weapon Armory", rv.data)
 
-def test_deatb():
+def test_death():
     # follow_redirect (changes url if the page redirects)
     rv = web.get('/', follow_redirects=True)
 
