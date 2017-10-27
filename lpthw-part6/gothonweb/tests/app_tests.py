@@ -30,3 +30,9 @@ def test_death():
 
     assert_equal(rv.status_code, 200)
     assert_in(b"You Died!", rv.data)
+
+
+    data = {'action':'dodge!'}
+    rv = web.post('/game', follow_redirects=True, data=data)
+    assert_equal(rv.status_code, 200)
+    assert_in(b"You Died!", rv.data)
